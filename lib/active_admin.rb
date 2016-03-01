@@ -3,18 +3,21 @@ require 'set'
 
 require 'ransack'
 require 'ransack_ext'
-require 'bourbon'
 require 'kaminari'
 require 'formtastic'
 require 'formtastic_i18n'
-require 'sass-rails'
 require 'inherited_resources'
-require 'jquery-rails'
-require 'jquery-ui-rails'
-require 'coffee-rails'
 require 'arbre'
 
 require 'active_admin/helpers/i18n'
+
+unless %w{0 false}.include? ENV['ACTIVE_ADMIN_REQUIRE_ASSETS'].to_s
+  require 'bourbon'
+  require 'sass-rails'
+  require 'jquery-rails'
+  require 'jquery-ui-rails'
+  require 'coffee-rails'
+end
 
 module ActiveAdmin
 
